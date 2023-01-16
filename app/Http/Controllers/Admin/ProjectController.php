@@ -52,7 +52,7 @@ class ProjectController extends Controller
 
 
         $project = Project::create($val_data);
-        return to_route('admin.projects.index')->with('message', "$project->title added succesfully!");
+        return to_route('admin.projects.index')->with('message', "Project id: $project->id, $project->title added succesfully!");
     }
 
     /**
@@ -100,7 +100,7 @@ class ProjectController extends Controller
             $val_data['cover_image'] = $cover_image;
         }
         $project->update($val_data);
-        return to_route('admin.projects.index');
+        return to_route('admin.projects.index')->with('message', "Project id: $project->id, $project->title updated succesfully!");
     }
 
     /**

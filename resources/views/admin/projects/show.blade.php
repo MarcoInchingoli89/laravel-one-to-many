@@ -5,16 +5,21 @@
         @if ($project->cover_image)
             <img class="img-fluid" src="{{ asset('storage/' . $project->cover_image) }}" alt="">
         @else
-            <div class="placeholder p-5 bg-secondary">Placeholder</div>
+            <div class="placeholder-lg p-5 bg-secondary">Placeholder</div>
         @endif
-        <div class="d-flex gap-4">
-            <div class="details">
-                <h1>{{ $project->title }}</h1>
-                <div class="content">
-                    {{ $project->description }}
-                </div>
+        <h1>{{ $project->title }}</h1>
 
-            </div>
+        <div class="type">
+            <strong>Project Type:</strong>
+            {{ $project->type ? $project->type->name : 'Uncategorized' }}
         </div>
+
+        <div class="content">
+            <strong>Description:</strong>
+            {{ $project->description }}
+        </div>
+
+
+
     </div>
 @endsection

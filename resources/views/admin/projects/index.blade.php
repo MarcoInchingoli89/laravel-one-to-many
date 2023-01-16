@@ -20,6 +20,7 @@
                         <th>Id</th>
                         <th>Title</th>
                         <th>Cover Image</th>
+                        <th>Type</th>
                         <th>Description</th>
                         <th>Actions</th>
                     </tr>
@@ -31,6 +32,7 @@
                             <td>{{ $project->title }}</td>
                             <td><img width="140" class="img-fluid" src="{{ asset('storage/' . $project->cover_image) }}"
                                     alt=""></td>
+                            <td>{{ $project->type ? $project->type->name : 'Uncategorized' }}</td>
                             <td>{{ $project->description }}</td>
                             <td>
                                 <a class="d-flex text-white p-2 my-2 bg-primary justify-content-center rounded-2"
