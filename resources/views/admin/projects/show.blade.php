@@ -5,7 +5,7 @@
         @if ($project->cover_image)
             <img class="img-fluid" src="{{ asset('storage/' . $project->cover_image) }}" alt="">
         @else
-            <div class="placeholder-lg p-5 bg-secondary">Placeholder</div>
+            <div class="placeholder p-5 bg-secondary">Placeholder</div>
         @endif
         <h1>{{ $project->title }}</h1>
 
